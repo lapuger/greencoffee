@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="그린커피, 그린카페, 커피, 카페, zjvl, rmflszjvl, 아메리카노">
+	<meta name="description" content="커피 전문점, 엄선한 원두로 매일 로스팅한 커피와 케익, 브런치 메뉴 소개.">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.sub').hide();					
+			$('.snb').mouseenter(function(){				
+				$('.sub').slideDown();
+				}).mouseleave(function(){
+				$('.sub').slideUp();		
+			});
+			$('.sub').mouseenter(function(){
+				$('.sub').stop().slideDown();
+				}).mouseleave(function(){
+				$('.sub').slideUp();
+			});	
+
+			
+			$('.snb li').mouseenter(function(){
+				$('snb li').removeClass('selecting');
+				$(this).addClass('selecting');				
+			}).mouseleave(function(){				
+				$(this).addClass('selecting');				
+				$('.snb li').removeClass('selecting');					
+			});
+
+			
+			
+			$('.view section').eq(0).show(); 
+			$('#bar_in li').eq(0).addClass('selected');
+			$('#bar_in li').click(function(){				
+				$('#bar_in li').removeClass('selected');
+				$(this).addClass('selected');
+				$('section').hide();
+				$('section').eq($(this).index()).show();
+				$('section li:nth-child(1)').children().show();
+				$('section li:first-child h3').addClass('select').removeClass('icon-up-dir').addClass('icon-down-dir');
+			});
+		
+
+
+			$('section .row').hide(); 
+			$('section h3').addClass('icon-up-dir');
+			$('section li:first-child h3').addClass('select').removeClass('icon-up-dir').addClass('icon-down-dir');
+			$('section h3').first().addClass('select').removeClass('icon-up-dir').addClass('icon-down-dir');			
+			$('section h3').first().next().show();
+			$('section h3').click(function(){
+				if($(this).hasClass('select')){
+					$(this).next().slideUp();
+					$(this).removeClass('select').removeClass('icon-down-dir').addClass('icon-up-dir');
+				}else{
+					$('section .row').slideUp();			
+					$(this).next().slideDown();
+					$('section h3').removeClass('select').removeClass('icon-down-dir').addClass('icon-up-dir');
+					$(this).addClass('select').addClass('icon-down-dir').removeClass('icon-up-dir');			
+				}
+			});
+
+			$('section dl img').css({'opacity':'0.8', marginleft:'0'
+		}).mouseenter(function(){
+				$(this).animate({opacity:'1',
+					width:'235px',
+					marginLeft:'-5px'
+				},500);
+			}).mouseleave(function(){
+				$(this).animate({opacity:'0.8',
+					width:'225px',
+					marginLeft:'0'
+				},500);
+			});
+
+		});	
+		
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="css/menu_web.css" >
+	<link rel="icon" type="image/x-icon" href="images/logo.png">
+	<link rel="stylesheet" type="text/css" href="fontello/css/fontello.css">
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+		*{margin:0; padding:0; box-sizing:border-box;}
+		body{font-family: 'Nanum Gothic', sans-serif; font-size:16px; color:#222; overflow-x:hidden;}
+		img{vertical-align:top;}
+		#bar_in li.selected{background-image:url(images/bar_select.png); background-repeat:no-repeat;background-position: center;}
+		section{display:none;}
+		section h3.select{background-color:#3c8687;}
+		.snb li.selecting{border-bottom:5px solid #45b64a;}		
+
+	</style>
+
+
+	<title>그린커피 - 메뉴</title>
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<div>
+				<h1><a href="index.html"><img src="images/logo.png" alt="로고"></a></h1>
+			</div>
+			<div class="lnb">
+				<ul>
+					<li><a href="#">Sign up</a></li>
+					<li><a href="#">Log in</a></li>					
+					<li><a href="#" class="icon-search"></a></li>
+				</ul>
+			</div>
+			<div class="snb">
+				<ul>
+					<li id="select"><a href="menu.html">MENU</a></li>
+					<li><a href="store.html">STORE</a></li>
+					<li><a href="#">MEMBERS</a></li>
+					<li><a href="#">STORY</a></li>
+					<li><a href="#">NOTICE</a></li>
+				</ul>								
+			</div>			
+		</header>
+		<div class="sub">
+			<div id="sub">
+				<div id="sub_in">
+					<ul id="menu">
+						<li><a href="#">COFFEE</a></li>
+						<li><a href="#">DRINK</a></li>
+						<li><a href="#">BAKERY</a></li>
+						<li><a href="#">SET MENU</a></li>
+						<li><a href="#">MD</a></li>
+					</ul>
+					<ul id="store">
+						<li><a href="#">PREMIUM STORE</a></li>
+						<li><a href="#">SEARCH STORE</a></li>
+						<li><a href="#">FAVORITE STORE</a></li>
+					</ul>
+					<ul id="members">
+						<li><a href="#">MEMBERS?</a></li>
+						<li><a href="#">2019 REWARDS</a></li>
+						<li><a href="#">GIFT CARD</a></li>
+						<li><a href="#">F A Q</a></li>
+					</ul>
+					<ul id="story">
+						<li><a href="#">aa</a></li>
+						<li><a href="#">bb</a></li>
+					</ul>
+					<ul id="notice">
+						<li><a href="#">NOTICE</a></li>
+						<li><a href="#">EVENT</a></li>
+						<li><a href="#">Q &amp; A</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="view">
+			<div id="bar">
+				<ul id="bar_in">
+					<li>COFFEE</li>
+					<li>DRINK</li>
+					<li>BAKERY</li>
+					<li>SET MENU</li>
+					<li>MD</li>					
+				</ul>
+			</div>
+			<section>
+				<ul>
+					<li>
+						<h3>COLD BREW</h3>
+						<div class="row">
+							<a href="#">
+								<dl>									
+									<dt><img src="images/cb1.jpg" alt="나이트로 쇼콜라"></dt>
+									<dd><span>BEST</span></dd>
+									<dd>나이트로 쇼콜라</dd>									
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/cb2.jpg" alt="나이트로 쇼콜라 클라우드"></dt>
+									<dd><span>Limited</span></dd>
+									<dd>나이트로 쇼콜라 클라우드</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/cb3.jpg" alt="나이트로 콜드 브루"></dt>
+									<dd>나이트로 콜드 브루</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/cb4.jpg" alt="돌체 콜드 브루"></dt>
+									<dd>돌체 콜드 브루</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/cb5.jpg" alt="바닐라 크림 콜드 브루"></dt>
+									<dd>바닐라 크림 콜드 브루</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/cb6.jpg" alt="콜드 브루"></dt>
+									<dd>콜드 브루</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/cb7.jpg" alt="콜드 브루 몰트"></dt>
+									<dd>콜드 브루 몰트</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/cb8.jpg" alt="콜드 브루 플로트"></dt>
+									<dd>콜드 브루 플로트</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/cb9.jpg" alt="콜드 폼 콜드 브루"></dt>
+									<dd>콜드 폼 콜드 브루</dd>
+								</dl>
+							</a>
+						</div>
+					</li>
+					<li>
+						<h3>FRAPPUCCINO</h3>
+						<div class="row">
+							<a href="#">
+								<dl>
+									<dt><img src="images/fp1.jpg" alt="모카 프라푸치노"></dt>
+									<dd>모카 프라푸치노</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/fp2.jpg" alt="자바 칩 프라푸치노"></dt>
+									<dd><span>BEST</span></dd>
+									<dd>자바 칩 프라푸치노</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/fp3.jpg" alt="그린 티 크림 프라푸치노"></dt>
+									<dd>그린 티 크림 프라푸치노</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/fp4.jpg" alt="제주 까망 크림 프라푸치노"></dt>
+									<dd>제주 까망 크림 프라푸치노</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/fp5.jpg" alt="아몬드 모카 프라푸치노"></dt>
+									<dd>아몬드 모카 프라푸치노</dd>
+								</dl>
+							</a>
+						</div>
+					</li>
+					<li>
+						<h3>ESPRESSO</h3>
+						<div class="row">
+							<a href="#">
+								<dl>
+									<dt><img src="images/ep1.jpg" alt="플로랄 스타벅스 더블 샷"></dt>
+									<dd>플로랄 스타벅스 더블 샷</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/ep2.jpg" alt="에스프레소 콘 파나"></dt>
+									<dd>에스프레소 콘 파나</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/ep3.jpg" alt="에스프레소 마키아또"></dt>
+									<dd>에스프레소 마키아또</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/ep4.jpg" alt="카페 아메리카노"></dt>
+									<dd>카페 아메리카노</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/ep5.jpg" alt="카라멜 마키아또"></dt>
+									<dd>카라멜 마키아또</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/ep6.jpg" alt="카푸치노"></dt>
+									<dd>카푸치노</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/ep7.jpg" alt="라벤더 카페 브레베"></dt>
+									<dd>라벤더 카페 브레베</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/ep8.jpg" alt="럼 샷 코르타도"></dt>
+									<dd>럼 샷 코르타도</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/ep9.jpg" alt="스타벅스 돌체 라떼"></dt>
+									<dd><span>BEST</span></dd>
+									<dd>스타벅스 돌체 라떼</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/ep10.jpg" alt="카페 라떼"></dt>
+									<dd>카페 라떼</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/ep11.jpg" alt="카페 모카"></dt>
+									<dd>카페 모카</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/ep12.jpg" alt="리스트레토 비안코"></dt>
+									<dd>리스트레토 비안코</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/ep13.jpg" alt="블론드 에스프레소 토닉"></dt>
+									<dd>블론드 에스프레소 토닉</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/ep14.jpg" alt="에스프레소"></dt>
+									<dd>에스프레소</dd>
+								</dl>
+							</a>
+						</div>
+					</li>
+					<li>
+						<h3>BLENDED</h3>
+						<div class="row">
+							<a href="#">
+								<dl>
+									<dt><img src="images/bd1.jpg" alt="디카페인 아포가토 블렌디드"></dt>
+									<dd>디카페인 아포가토 블렌디드</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/bd2.jpg" alt="망고 패션 후르츠 블렌디드"></dt>
+									<dd>망고 패션 후르츠 블렌디드</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/bd3.jpg" alt="제주 호두 당근 블렌디드"></dt>
+									<dd><span>Limited</span></dd>
+									<dd>제주 호두 당근 블렌디드</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/bd4.jpg" alt="아보카도 블렌디드"></dt>
+									<dd>아보카도 블렌디드</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/bd5.jpg" alt="자몽 셔벗 블렌디드"></dt>
+									<dd>자몽 셔벗 블렌디드</dd>
+								</dl>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<ul>
+					<li>
+						<h3>TEA</h3>
+						<div class="row">
+							<a href="#">
+								<dl>
+									<dt><img src="images/tea1.jpg" alt="말차 레모네이드"></dt>
+									<dd>말차 레모네이드</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/tea2.jpg" alt="별다방 아이스 티"></dt>
+									<dd>별다방 아이스 티</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/tea3.jpg" alt="핑크베리 유스베리"></dt>
+									<dd>핑크베리 유스베리</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/tea4.jpg" alt="그랜마 애플 블랙 티"></dt>
+									<dd>그랜마 애플 블랙 티</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/tea5.jpg" alt="라임 패션 티"></dt>
+									<dd>라임 패션 티</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/tea6.jpg" alt="민트 블렌드 티"></dt>
+									<dd>민트 블렌드 티</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/tea7.jpg" alt="히비스커스 블렌드 티"></dt>
+									<dd>히비스커스 블렌드 티</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/tea8.jpg" alt="자몽 허니 블랙 티"></dt>
+									<dd><span>BEST</span></dd>
+									<dd>자몽 허니 블랙 티</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/tea9.jpg" alt="잉글리쉬 브렉퍼스트 티"></dt>
+									<dd>잉글리쉬 브렉퍼스트 티</dd>
+								</dl>
+							</a>
+							<a href="#">								
+								<dl>
+									<dt><img src="images/tea10.jpg" alt="썸머 시트러스 소르베 그린 티"></dt>
+									<span>NEW</span>
+									<dd>썸머 시트러스 소르베 그린 티</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/tea11.jpg" alt="가드닝 블랙 티"></dt>
+									<dd>가드닝 블랙 티</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/tea12.jpg" alt="토마토 라임 그린 티"></dt>
+									<dd>토마토 라임 그린 티</dd>
+								</dl>
+							</a>
+						</div>
+					</li>
+					<li>
+						<h3>FRUIT JUICE</h3>
+						<div class="row">
+							<a href="#">
+								<dl>
+									<dt><img src="images/juice1.jpg" alt="레드 선라이즈 270ML"></dt>
+									<dd>레드 선라이즈 270ML</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/juice2.jpg" alt="옐로우 패션 270ML"></dt>
+									<dd>옐로우 패션 270ML</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/juice3.jpg" alt="파인 그린 270ML"></dt>
+									<dd>파인 그린 270ML</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/juice4.jpg" alt="딸기주스 190ML"></dt>
+									<dd>딸기주스 190ML</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/juice5.jpg" alt="망고주스 190ML"></dt>
+									<dd>망고주스 190ML</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/juice6.jpg" alt="밀싹&민트 주스 190ML"></dt>
+									<dd>밀싹&민트 주스 190ML</dd>
+
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/juice7.jpg" alt="수박주스 190ML"></dt>
+									<dd>수박주스 190ML</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/juice8.jpg" alt="케일&사과주스 190ML"></dt>
+									<dd>케일&사과주스 190ML</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/juice9.jpg" alt="토마토주스 190ML"></dt>
+									<dd>토마토주스 190ML</dd>
+								</dl>
+							</a>
+						</div>
+					</li>
+					<li>
+						<h3>YOGURT</h3>
+						<div class="row">
+							<a href="#">
+								<dl>
+									<dt><img src="images/yg1.jpg" alt="스타벅스 오가닉 그릭 요거트"></dt>
+									<dd>스타벅스 오가닉 그릭 요거트</dd>
+								</dl>
+							</a>
+						</div>
+					</li>
+					<li>
+						<h3>ETC</h3>
+						<div class="row">
+							<a href="#">
+								<dl>
+									<dt><img src="images/etc1.jpg" alt="사과 가득 핸디 젤리"></dt>
+									<dd>사과 가득 핸디 젤리</dd>
+								</dl>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<ul>
+					<li>
+						<h3>CAKE</h3>
+						<div class="row">
+						<a href="#">
+							<dl>
+								<dt><img src="images/cake1.jpg" alt="레드벨벳 크림치즈 케이크"></dt>
+								<dd>레드벨벳 크림치즈 케이크</dd>
+							</dl>
+						</a>					
+						</div>
+					</li>
+					<li>
+						<h3>BREAD</h3>
+						<div class="row">
+						<a href="#">
+							<dl>
+								<dt><img src="images/br1.jpg" alt="블루베리 베이글"></dt>
+								<dd><span>NEW</span></dd>
+								<dd>블루베리 베이글</dd>
+							</dl>
+						</a>	
+						<a href="#">
+							<dl>
+								<dt><img src="images/br3.jpg" alt="클래식 스콘"></dt>
+								<dd><span>NEW</span></dd>
+								<dd>클래식 스콘</dd>
+							</dl>
+						</a>				
+						</div>
+					</li>
+					<li>
+						<h3>COOKIES</h3>
+						<div class="row">
+						<a href="#">
+							<dl>
+								<dt><img src="images/cookie1.jpg" alt="초콜릿 월넛 돔 쿠키"></dt>
+								<dd>초콜릿 월넛 돔 쿠키</dd>
+							</dl>
+						</a>					
+						</div>
+					</li>
+					<li>
+						<h3>BRUNCH</h3>
+						<div class="row">
+						<a href="#">
+							<dl>
+								<dt><img src="images/brunch1.jpg" alt="이탈리안 뇨끼"></dt>
+								<dd>이탈리안 뇨끼</dd>
+							</dl>
+						</a>					
+						</div>
+					</li>
+				</ul>				
+			</section>
+
+			<section>
+				<ul>
+					<li>
+						<h3>MENU A</h3>
+						<div class="row">
+						<a href="#">
+							<dl>
+								<dt><img src="images/setA_1.jpg" alt="포크 커틀릿 샌드위치"></dt>
+								<dd>포크 커틀릿 샌드위치</dd>
+							</dl>
+						</a>		
+						<a href="#">
+							<dl>
+								<dt><img src="images/setA_2.jpg" alt="햄 치즈 루꼴라 샌드위치"></dt>
+								<dd>햄 치즈 루꼴라 샌드위치</dd>
+							</dl>
+						</a>			
+						</div>
+					</li>
+					<li>
+						<h3>MENU B</h3>
+						<div class="row">
+						<a href="#">
+							<dl>
+								<dt><img src="images/setB_1.jpg" alt="치킨 에그 샐러드 포미"></dt>
+								<dd>치킨 에그 샐러드 포미</dd>
+							</dl>
+						</a>	
+						<a href="#">
+							<dl>
+								<dt><img src="images/setB_2.jpg" alt="허머스 그릭 샐러드 포 미"></dt>
+								<dd>허머스 그릭 샐러드 포 미</dd>
+							</dl>
+						</a>
+						<a href="#">
+							<dl>
+								<dt><img src="images/setB_3.jpg" alt="라임 치킨 퀴노아 샐러드 JAR"></dt>
+								<dd>라임 치킨 퀴노아 샐러드 JAR</dd>
+							</dl>
+						</a>				
+						</div>
+					</li>
+					<li>
+						<h3>MENU C</h3>
+						<div class="row">
+						<a href="#">
+							<dl>
+								<dt><img src="images/setC_1.jpg" alt="현미 크림 수프"></dt>
+								<dd>현미 크림 수프</dd>
+							</dl>
+						</a>
+						<a href="#">
+							<dl>
+								<dt><img src="images/setC_1.jpg" alt="단호박 당근 수프"></dt>
+								<dd>단호박 당근 수프</dd>
+							</dl>
+						</a>					
+						</div>
+					</li>
+					<li>
+						<h3>MENU D</h3>
+						<div class="row">
+						<a href="#">
+							<dl>
+								<dt><img src="images/setD_1.jpg" alt="프리타타 베리 팬케이크"></dt>
+								<dd>프리타타 베리 팬케이크</dd>
+							</dl>
+						</a>					
+						</div>
+					</li>
+				</ul>				
+			</section>
+
+			<section>
+				<ul>
+					<li>
+						<h3>MUG</h3>
+						<div class="row">
+							<a href="#">
+								<dl>
+									<dt><img src="images/md1.jpg" alt="그린커피 머그"></dt>
+									<dd>그린커피 머그 (3색)</dd>
+								</dl>
+							</a>							
+							<a href="#">
+								<dl>
+									<dt><img src="images/md6.jpg" alt="그린커피 스틸 맞춤 머그"></dt>
+									<dd>그린커피 스틸 맞춤 머그</dd>
+								</dl>
+							</a>
+						</div>
+					</li>
+					<li>
+						<h3>TUMBLER</h3>
+						<div class="row">
+							<a href="#">
+								<dl>
+									<dt><img src="images/md3.jpg" alt="그린커피 슬림 텀블러"></dt>
+									<dd>그린커피 슬림 텀블러 (3색)</dd>
+								</dl>
+							</a>
+						</div>
+					</li>
+					<li>
+						<h3>ETC</h3>
+						<div class="row">
+							<a href="#">
+								<dl>
+									<dt><img src="images/md2.jpg" alt="그린커피 프로페셔널 포트"></dt>
+									<dd>그린커피 프로페셔널 포트</dd>
+								</dl>
+							</a>							
+							<a href="#">
+								<dl>
+									<dt><img src="images/md4.jpg" alt="그린커피 코스터"></dt>
+									<dd>그린커피 코스터 (2종)</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<dl>
+									<dt><img src="images/md5.jpg" alt="그린커피 에코백"></dt>
+									<dd>그린커피 에코백</dd>
+								</dl>
+							</a>
+						</div>
+					</li>
+				</ul>
+				
+			</section>
+		</div>
+		<footer>
+			<div id="footer">
+				<ul class="block">
+					<li><a href="#">찾아오시는 길</a></li>
+					<li><a href="#">신규입점 문의</a></li>
+					<li><a href="#">사이트 맵</a></li>
+				</ul>
+				<ul class="fnb">
+					<li><a href="#">개인정보처리방침</a></li>
+					<li><a href="#">홈페이지 이용약관</a></li>
+					<li><a href="#">위치정보 이용약관</a></li>
+					<li><a href="#">비회원 이용약관</a></li>
+				</ul>
+				<address>
+					사업자등록번호 : 201-81-21515 (주)그린커피 코리아 대표이사 : 송 데이비드 호섭 TEL : 02) 3015-1100 개인정보 책임자 : 양종환<br />
+				ⓒ 2019 Green Coffee Company. All Rights Reserved.</address>
+			</div>
+		</footer>	
+
+		<div class="quick">
+			<ul>
+				<li><a href="menu.html"><img src="images/quick1.jpg" alt="메뉴"><span>&nbsp;MENU</span></a></li>
+				<li><a href="store.html"><img src="images/quick2.jpg" alt="스토어"><span>&nbsp;STORE</span></a></li>
+				<li><a href="#"><img src="images/quick3.jpg" alt="머천"><span>&nbsp;&nbsp;&nbsp;MD</span></a></li>
+				<li><a href="#"><img src="images/quick4.jpg" alt="공지"><span>NOTICE</span></a></li>
+			</ul>
+		</div>	
+
+	</div>	
+</body>
+</html>

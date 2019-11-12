@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="그린커피, 그린카페, 커피, 카페, zjvl, rmflszjvl, 아메리카노">
+	<meta name="description" content="커피 전문점, 엄선한 원두로 매일 로스팅한 커피와 케익, 브런치 메뉴 소개.">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.sub').hide();					
+			$('.snb').mouseenter(function(){				
+				$('.sub').slideDown();
+				}).mouseleave(function(){
+				$('.sub').slideUp();		
+			});
+			$('.sub').mouseenter(function(){
+				$('.sub').stop().slideDown();
+				}).mouseleave(function(){
+				$('.sub').slideUp();
+			});	
+
+			
+			$('.snb li').mouseenter(function(){
+				$('snb li').removeClass('selecting');
+				$(this).addClass('selecting');				
+			}).mouseleave(function(){				
+				$(this).addClass('selecting');				
+				$('.snb li').removeClass('selecting');					
+			});
+			
+
+			$('.view section').hide(); 
+			$('.view section').eq(0).show(); 
+			$('#bar_in li').eq(0).addClass('selected');
+			$('#bar_in li').click(function(){
+				$('#bar_in li').removeClass('selected');
+				$(this).addClass('selected');
+				$('section').hide();
+				$('section').eq($(this).index()).show();
+			});
+
+
+			$('.row2 #list li').click(function(){
+				$('.row2 #zoom li').hide();
+				$('.row2 #zoom li').eq($(this).index()).fadeIn();
+			});
+			
+		});	
+		
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="css/store_web.css" >
+	<link rel="icon" type="image/x-icon" href="images/logo.png">
+	<link rel="stylesheet" type="text/css" href="fontello/css/fontello.css">
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+		*{margin:0; padding:0; box-sizing:border-box;}
+		body{font-family: 'Nanum Gothic', sans-serif; font-size:16px; color:#222; overflow-x:hidden;}
+		img{vertical-align:top;}
+		#bar_in li.selected{background-image:url(images/bar_select.png); background-repeat:no-repeat;background-position: center;}
+		section h3.select{background-color:#3c8687;}
+		.snb li.selecting{border-bottom:5px solid #45b64a;}		
+
+	</style>
+
+
+	<title>그린커피 - 메뉴</title>
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<div>
+				<h1><a href="index.html"><img src="images/logo.png" alt="로고"></a></h1>
+			</div>
+			<div class="lnb">
+				<ul>
+					<li><a href="#">Sign up</a></li>
+					<li><a href="#">Log in</a></li>					
+					<li><a href="#" class="icon-search"></a></li>
+				</ul>
+			</div>
+			<div class="snb">
+				<ul>
+					<li><a href="menu.html">MENU</a></li>
+					<li id="select"><a href="#">STORE</a></li>
+					<li><a href="#">MEMBERS</a></li>
+					<li><a href="#">STORY</a></li>
+					<li><a href="#">NOTICE</a></li>
+				</ul>								
+			</div>			
+		</header>
+		<div class="sub">
+			<div id="sub">
+				<div id="sub_in">
+					<ul id="menu">
+						<li><a href="#">COFFEE</a></li>
+						<li><a href="#">DRINK</a></li>
+						<li><a href="#">BAKERY</a></li>
+						<li><a href="#">SET MENU</a></li>
+						<li><a href="#">MD</a></li>
+					</ul>
+					<ul id="store">
+						<li><a href="#">PREMIUM STORE</a></li>
+						<li><a href="#">SEARCH STORE</a></li>
+						<li><a href="#">FAVORITE STORE</a></li>
+					</ul>
+					<ul id="members">
+						<li><a href="#">MEMBERS?</a></li>
+						<li><a href="#">2019 REWARDS</a></li>
+						<li><a href="#">GIFT CARD</a></li>
+						<li><a href="#">F A Q</a></li>
+					</ul>
+					<ul id="story">
+						<li><a href="#">aa</a></li>
+						<li><a href="#">bb</a></li>
+					</ul>
+					<ul id="notice">
+						<li><a href="#">NOTICE</a></li>
+						<li><a href="#">EVENT</a></li>
+						<li><a href="#">Q &amp; A</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="view">
+			<div id="bar">
+				<ul id="bar_in">
+					<li>PREMIUIM STORE</li>
+					<li>SEARCH STORE</li>
+					<li>FAVOURITE STORE</li>
+				</ul>
+			</div>
+			<section>				
+				<div class="row1 row">
+					<h2><img src="images/pr_store.jpg" alt="프리미어 스토어 장점"></h2>		
+					<dl>
+						<dt><span><img src="images/pr_check.png" alt="체크"></span>일반 매장에 없는 고급 메뉴</dt>
+						<dd>우수한 품질과 맛을 위해,<br />
+							원두의 엄선 단계부터 커피, 음료, 베이커리<br />
+							R&D가 계속됩니다.
+						</dd>
+					</dl>
+					<dl>
+						<dt><span><img src="images/pr_check.png" alt="체크"></span>차별화된 서비스</dt>
+						<dd>고객 모두의 더 나은 커피 경험을 위해,<br />
+							항상 노력하며 끊임없이 소통합니다.
+						</dd>
+					</dl>
+					<dl>
+						<dt><span><img src="images/pr_check.png" alt="체크"></span>프리미엄 스토어만의 MD</dt>
+						<dd>업그레이드된 프리미엄 커피에 어울리는<br />
+							품격있는 MD를 만나보세요.
+						</dd>
+					</dl>
+					<dl>
+						<dt><span><img src="images/pr_check.png" alt="체크"></span>전문 이상 바리스타</dt>
+						<dd>완벽한 한 잔을 위해,<br />
+							최고의 커피 전문가들이 끊임없이 연구합니다.
+						</dd>
+					</dl>
+				</div>
+				<div class="row2 row">
+					<div id="map">
+						<img src="images/pr_map.jpg" alt="프리미엄 매장 지도">
+					</div>
+					<div id="serch">
+						<h3>
+							전국 프리미엄 스토어 현황<br />
+							<small>지도에서 클릭 또는 지역 내 검색</small>
+						</h3>
+						<form>
+							<input type="text" placeholder=" 지역명 (예: 서울시 강서구)">
+							<button class="icon-search"></button>
+						</form>
+						<h4>목록에서 선택</h4>
+						<ul id="list">
+							<li>서울</li>
+							<li>경기</li>
+							<li>광주</li>
+							<li>대구</li>
+							<li>대전</li>
+							<li>부산</li>
+							<li>울산</li>
+							<li>인천</li>
+							<li>강원</li>
+							<li>제주</li>
+						</ul>
+						<ul id="zoom">
+							<li>
+								<dl>
+									<dt><img src="images/map1.png" alt="서울"></dt>
+									<dd>서울 강서점</dd>
+									<dd>서울시 강서구</dd>
+									<dd>02-123-4567</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt><img src="images/map2.png" alt="경기"></dt>
+									<dd>수원 수원역점</dd>
+									<dd>수원시 팔달구</dd>
+									<dd>031-123-4567</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt><img src="images/map3.png" alt="광주"></dt>
+									<dd>광주 유스퀘어점</dd>
+									<dd>광주 서구</dd>
+									<dd>062-123-4567</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt><img src="images/map4.png" alt="대구"></dt>
+									<dd>대구 중앙로점</dd>
+									<dd>대구 중구 중앙대로 424 중앙로역</dd>
+									<dd>053-256-7746</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt><img src="images/map5.png" alt="대전"></dt>
+									<dd>대전 지점</dd>
+									<dd>대전 유성구</dd>
+									<dd>042-123-4567</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt><img src="images/map6.png" alt="부산"></dt>
+									<dd>부산 해운대점</dd>
+									<dd>부산 해운대구</dd>
+									<dd>051-123-4567</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt><img src="images/map7.png" alt="울산"></dt>
+									<dd>울산 지점</dd>
+									<dd>울산 북구</dd>
+									<dd>052-123-4567</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt><img src="images/map8.png" alt="인천"></dt>
+									<dd>인천 지점</dd>
+									<dd>인천 중구</dd>
+									<dd>032-123-4567</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt><img src="images/map9.png" alt="강원"></dt>
+									<dd>강원 지점</dd>
+									<dd>강릉 남문동</dd>
+									<dd>033-123-4567</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt><img src="images/map10.png" alt="제주"></dt>
+									<dd>제주 지점</dd>
+									<dd>제주 서귀포시</dd>
+									<dd>064-123-4567</dd>
+								</dl>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</section>
+			<section>Search Store</section>
+			<section>Favourite Store</section>
+		</div>
+		<footer>
+			<div id="footer">
+				<ul class="block">
+					<li><a href="#">찾아오시는 길</a></li>
+					<li><a href="#">신규입점 문의</a></li>
+					<li><a href="#">사이트 맵</a></li>
+				</ul>
+				<ul class="fnb">
+					<li><a href="#">개인정보처리방침</a></li>
+					<li><a href="#">홈페이지 이용약관</a></li>
+					<li><a href="#">위치정보 이용약관</a></li>
+					<li><a href="#">비회원 이용약관</a></li>
+				</ul>
+				<address>
+					사업자등록번호 : 201-81-21515 (주)그린커피 코리아 대표이사 : 송 데이비드 호섭 TEL : 02) 3015-1100 개인정보 책임자 : 양종환<br />
+				ⓒ 2019 Green Coffee Company. All Rights Reserved.</address>
+			</div>
+		</footer>	
+
+		<div class="quick">
+			<ul>
+				<li><a href="menu.html"><img src="images/quick1.jpg" alt="메뉴"><span>&nbsp;MENU</span></a></li>
+				<li><a href="#"><img src="images/quick2.jpg" alt="스토어"><span>&nbsp;STORE</span></a></li>
+				<li><a href="#"><img src="images/quick3.jpg" alt="머천"><span>&nbsp;&nbsp;&nbsp;MD</span></a></li>
+				<li><a href="#"><img src="images/quick4.jpg" alt="공지"><span>NOTICE</span></a></li>
+			</ul>
+		</div>	
+
+	</div>	
+</body>
+</html>

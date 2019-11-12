@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="그린커피, 그린카페, 커피, 카페, zjvl, rmflszjvl, 아메리카노">
+	<meta name="description" content="커피 전문점, 엄선한 원두로 매일 로스팅한 커피와 케익, 브런치 메뉴 소개.">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){			
+			$('.sub').hide();					
+			$('.snb').mouseenter(function(){						
+				$('.sub').stop().slideDown();
+				}).mouseleave(function(){
+				$('.sub').stop().slideUp();		
+			});
+			$('.sub').mouseenter(function(){
+				$('.sub').stop().slideDown();
+				}).mouseleave(function(){
+				$('.sub').stop().slideUp();
+			});
+			$('.snb li').mouseenter(function(){
+				$(this).addClass('selecting');
+			}).stop().mouseleave(function(){
+				$('.snb li').removeClass('selecting')});
+/***********************************************************/
+
+			$('#control1 li').first().addClass('on');
+			$('#control1 li').each(function(index){
+				$(this).attr('aa',index);
+			}).click(function(){
+				$('#control1 li').removeClass('on');
+				$(this).addClass('on');
+				var i=$(this).attr('aa');
+				move1(i);
+			});
+			function move1(i){
+				var n=-(i*2473);
+				$('#main').animate({left:n},'slow');
+			};		
+			
+/***********************************************************/
+
+			$('#control2 li').first().addClass('on');
+			$('#control2 li').each(function(index){
+				$(this).attr('bb',index);
+			}).click(function(){
+				$('#control2 li').removeClass('on');
+				$(this).addClass('on');							
+				var i=$(this).attr('bb');
+				move2(i);
+			});	
+			
+			function move2(i){
+				var n=-(i*320);
+				$('.row1 dl').animate({left:n},'slow');
+			};
+			
+			var num=0;
+			var dir='next';
+			$('#next').click(function(){
+				dir='next';
+				var t=num+1;
+				if(t>3){
+					return false;
+					num=0;
+				}
+				$('#control2 li').eq(t).trigger('click');
+				num=t;
+			});
+
+			$('#prev').click(function(){
+				dir='prev';				
+				var t=num-1;	
+				if(t<0){
+					return false;
+					num=0;
+				}			
+				$('#control2 li').eq(t).trigger('click');
+				num=t;
+			});	
+
+/***********************************************************/
+			
+			var num=0;
+			var dir='next';
+			$('#control3 li').first().addClass('on');
+			$('#control3 li').each(function(index){
+				$(this).attr('cc',index);
+			}).click(function(){
+				$('#control3 li').removeClass('on');
+				$(this).addClass('on');							
+				var i=$(this).attr('cc');
+				move3(i);
+			});	
+			
+			function move3(i){
+				var m=-(i*305);
+				$('#ps_in ul:first-child').animate({left:m},'slow');
+			};
+			
+			$('#right').click(function(){
+				dir='next';
+				var t=num+1;
+				if(t>3){
+					return false;
+					num=0;
+				}
+				$('#control3 li').eq(t).trigger('click');
+				num=t;
+			});
+
+			$('#left').click(function(){
+				dir='prev';				
+				var t=num-1;	
+				if(t<0){
+					return false;
+					num=0;
+				}			
+				$('#control3 li').eq(t).trigger('click');
+				num=t;
+			});	
+			
+			
+
+		});
+
+	</script>
+	
+	<link rel="stylesheet" type="text/css" href="css/index_web.css" >
+	<link rel="icon" type="image/x-icon" href="images/logo.png">
+	<link rel="stylesheet" type="text/css" href="fontello/css/fontello.css">
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&display=swap" rel="stylesheet">
+	<style type="text/css">
+		*{margin:0; padding:0; box-sizing:border-box;}
+		body{font-family: 'Nanum Gothic', sans-serif; font-size:16px; color:#222; overflow-x:hidden;}
+		img{vertical-align:top;}
+		#control1 li.on{background-color:#45b64a;}
+		#control2 li.on{background-color:#45b64a;}
+		#control3 li.on{background-color:#45b64a;}
+		.snb li.selecting{border-bottom:5px solid #45b64a;	}
+
+		
+	</style>
+
+	<title>그린커피 - 첫화면</title>
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<div>
+				<h1><a href="index.html"><img src="images/logo.png" alt="로고"></a></h1>
+			</div>
+			<div class="lnb">
+				<ul>
+					<li><a href="#">Sign up</a></li>
+					<li><a href="#">Log in</a></li>					
+					<li><a href="#" class="icon-search"></a></li>
+				</ul>
+			</div>
+			<div class="snb">
+				<ul>
+					<li><a href="menu.html">MENU</a></li>
+					<li><a href="store.html">STORE</a></li>
+					<li><a href="#">MEMBERS</a></li>
+					<li><a href="#">STORY</a></li>
+					<li><a href="#">NOTICE</a></li>
+				</ul>								
+			</div>			
+		</header>
+		<div class="sub">
+			<div id="sub">
+				<div id="sub_in">
+					<ul id="menu">
+						<li><a href="#">COFFEE</a></li>
+						<li><a href="#">DRINK</a></li>
+						<li><a href="#">BAKERY</a></li>
+						<li><a href="#">SET MENU</a></li>
+						<li><a href="#">MD</a></li>
+					</ul>
+					<ul id="store">
+						<li><a href="#">PREMIUM STORE</a></li>
+						<li><a href="#">SEARCH STORE</a></li>
+						<li><a href="#">FAVORITE STORE</a></li>
+					</ul>
+					<ul id="members">
+						<li><a href="#">MEMBERS?</a></li>
+						<li><a href="#">2019 REWARDS</a></li>
+						<li><a href="#">GIFT CARD</a></li>
+						<li><a href="#">F A Q</a></li>
+					</ul>
+					<ul id="story">
+						<li><a href="#">aa</a></li>
+						<li><a href="#">bb</a></li>
+					</ul>
+					<ul id="notice">
+						<li><a href="#">NOTICE</a></li>
+						<li><a href="#">EVENT</a></li>
+						<li><a href="#">Q &amp; A</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="banner">
+			<ul id="main">
+				<li><img src="images/banner1.jpg" alt="흑당라떼"></li>
+				<li><img src="images/banner2.jpg" alt="여름 아이스 음료"></li>
+				<li><img src="images/banner3.jpg" alt="참빙수"></li>
+				<li><img src="images/banner4.jpg" alt="모닝롤"></li>
+			</ul>
+			<ul id="control1" class="control">
+				<li>&nbsp;</li>
+				<li>&nbsp;</li>
+				<li>&nbsp;</li>
+				<li>&nbsp;</li>
+			</ul>			
+		</div>
+		<section class="new">
+			<h2><img src="images/h1.png" alt="신메뉴"></h2>
+			<div class="new1">
+				<h3><img src="images/tape.png" alt="테이프" id="tape1"><a href="#"><img src="images/new1.jpg" alt="쇼콜라따"></a><img src="images/tape.png" alt="테이프" id="tape2"></h3>
+				<dl>
+					<dt><u><img src="images/new_h1.png"></u>쇼콜라따</dt>
+					<dd>
+						부드러운 우유에 진하고 깊은 초콜릿, 
+						풍부하고 달콤한 휘핑 크림 가득
+						삼박자가 조화를 이루는 음료.
+					</dd>
+				</dl>
+			</div>
+			<div class="new2">
+				<h3><img src="images/tape.png" alt="테이프" id="tape3"><a href="#"><img src="images/new2.jpg" alt="에스프레소 콘파냐"></a><img src="images/tape.png" alt="테이프" id="tape4"></h3>
+				<dl>
+					<dt><u><img src="images/new_h2.png"></u>에스프레소 콘파냐</dt>
+					<dd>
+						진한 에스프레소 위에 달콤하고 풍부한
+						휘핑크림과 디저트를 더한 음료로
+						에스프레소를 달콤하게 즐길 수 있는 음료.
+					</dd>
+				</dl>
+			</div>			
+		</section>
+		<section class="md">
+			<h2><img src="images/h2.png" alt="머천"></h2>
+			<div class="row1 row">
+				<dl>
+					<a href="#"><dt><img src="images/md1.jpg" alt="그린커피 머그">
+						<span class="circle">BEST</span></dt>
+						<dd>그린커피 머그 (3색)</dd></a>
+						<dd><form><input type="button" value="Buy"></form></dd>
+				</dl>
+				<dl>
+					<a href="#"><dt><img src="images/md2.jpg" alt="그린커피 프로페셔널 포트">
+						<span class="circle">NEW</span></dt>
+						<dd>그린커피 프로페셔널 포트</dd></a>
+						<dd><form><input type="button" value="Buy"></form></dd>
+				</dl>
+				<dl>
+					<a href="#"><dt><img src="images/md3.jpg" alt="그린커피 슬림 텀블러">
+						<span class="circle">NEW</span></dt>
+						<dd>그린커피 슬림 텀블러 (3색)</dd></a>
+						<dd><form><input type="button" value="Buy"></form></dd>
+				</dl>
+				<dl>
+					<a href="#"><dt><img src="images/md4.jpg" alt="그린커피 코스터">
+						</dt>
+						<dd>그린커피 코스터 (2종)</dd></a>
+						<dd><form><input type="button" value="Buy"></form></dd>
+				</dl>
+				<dl>
+					<a href="#"><dt><img src="images/md5.jpg" alt="그린커피 에코백">
+						</dt>
+						<dd>그린커피 에코백</dd></a>
+						<dd><form><input type="button" value="Buy"></form></dd>
+				</dl>
+				<dl>
+					<a href="#"><dt><img src="images/md6.jpg" alt="그린커피 맞춤 머그">
+						<span class="circle">BEST</span></dt>
+						<dd>그린커피 스틸 맞춤 머그</dd></a>
+						<dd><form><input type="button" value="Buy"></form></dd>
+				</dl>
+			</div>
+			<div class="row2 row">
+				<ul id="control2" class="control">
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+				</ul>
+				<ul id="btn">
+					<li id="prev"><span class="icon-left-open"></span></li>
+					<li id="next"><span class="icon-right-open"></span></li>
+				</ul>
+			</div>
+		</section>
+		<section class="ps">
+			<h2><img src="images/h3.png" alt="프리미엄 스토어"></h2>
+			<ul id="dir">
+				<li id="left"><span class="icon-left-dir"></span></li>
+				<li id="right"><span class="icon-right-dir"></span></li>
+			</ul>
+			<div id="ps_in">		
+				<ul id="store">
+					<li><a href="#"><img src="images/p1.jpg" alt="스토어1"></a></li>
+					<li><a href="#"><img src="images/p2.jpg" alt="스토어2"></a></li>
+					<li><a href="#"><img src="images/p3.jpg" alt="스토어3"></a></li>
+					<li><a href="#"><img src="images/p4.jpg" alt="스토어4"></a></li>
+					<li><a href="#"><img src="images/p5.jpg" alt="스토어5"></a></li>
+					<li><a href="#"><img src="images/p6.jpg" alt="스토어6"></a></li>
+				</ul>	
+				<ul id="control3" class="control">
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+				</ul>
+			</div>			
+		</section>
+
+		<footer>
+			<div id="footer">
+				<ul class="block">
+					<li><a href="#">찾아오시는 길</a></li>
+					<li><a href="#">신규입점 문의</a></li>
+					<li><a href="#">사이트 맵</a></li>
+				</ul>
+				<ul class="fnb">
+					<li><a href="#">개인정보처리방침</a></li>
+					<li><a href="#">홈페이지 이용약관</a></li>
+					<li><a href="#">위치정보 이용약관</a></li>
+					<li><a href="#">비회원 이용약관</a></li>
+				</ul>
+				<address>
+					사업자등록번호 : 201-81-21515 (주)그린커피 코리아 대표이사 : 송 데이비드 호섭 TEL : 02) 3015-1100 개인정보 책임자 : 양종환<br />
+				ⓒ 2019 Green Coffee Company. All Rights Reserved.</address>
+			</div>
+		</footer>	
+
+		<div class="quick">
+			<ul>
+				<li><a href="menu.html"><img src="images/quick1.jpg" alt="메뉴"><span>&nbsp;MENU</span></a></li>
+				<li><a href="store.html"><img src="images/quick2.jpg" alt="스토어"><span>&nbsp;STORE</span></a></li>
+				<li><a href="menu.html"><img src="images/quick3.jpg" alt="머천"><span>&nbsp;&nbsp;&nbsp;MD</span></a></li>
+				<li><a href="#"><img src="images/quick4.jpg" alt="공지"><span>NOTICE</span></a></li>
+			</ul>
+		</div>	
+	</div>	
+</body>
+</html>
